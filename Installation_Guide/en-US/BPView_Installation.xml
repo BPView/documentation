@@ -3,10 +3,199 @@
 <!ENTITY % BOOK_ENTITIES SYSTEM "Installation_Guide.ent">
 %BOOK_ENTITIES;
 ]>
-<chapter id="chap-BPView-Installation_Guide-BPView_Installation">
-	<title>BPView Installation</title>
+<chapter id="chap-BPView-Installation_Guide-Installing_BPView">
+	<title>Installing BPView</title>
 	<para>
-	
+		This chapter describes briefly how to install BPView on an Red Hat Enterprise Linux 6 host using the provided RPM packages.
 	</para>
+	
+	<section>
+		<title>Prerequisites for Installation</title>
+		<para>
+			Before you can install BPView you have to make that the installation environment is suitable configured.
+		</para>
+		
+		<section>
+			<title>Supported Server Platforms</title>
+			<para>
+				BPView 0.10 is supported on the following platforms:
+				<itemizedlist>
+					<listitem>
+						<para>
+							Red Hat Enterprise Linux 6 x86_64
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+		</section>
+		
+		<section>
+			<title>Hardware and Virtual Machine Recommendations</title>
+			<para>
+				BPView can run on any hardware or virtualization environment supported for Red Hat Enterprise Linux 6.
+				To verify your hardware of virtualization platform is supported visit <ulink url="https://access.redhat.com">
+				https://access.redhat.com</ulink>
+			</para>
+			<para>
+				In order to run BPView correctly make sure the following minimum requirements are fulfilled:
+				<itemizedlist>
+					<listitem>
+						<para>
+							CPU: 2 CPU cores
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Memory: 2 GB of memory
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<note>
+				<para>
+					The amount of CPU core and memory depends on the number of business processes you want to correlate
+					and can a lot higher as the minimum requirements.
+				</para>
+			</note>
+			
+			<para>
+				For best performance it's recommended to use tuned for tuning system performance. Please consult Red Hat
+				Enterprise Linux 6 documentation on how to tune the operating system.
+			</para>
+		</section>
+		
+		<section>
+			<title>Software Requirements</title>
+			<para>
+				All of the packages BPView depends on are installed as dependencies when installing the BPView RPM
+				package. In order to be able to resolve these dependencies some repositories are required:
+			</para>
+			<para>
+				<itemizedlist>
+					<listitem>
+						<para>
+							Red Hat Enterprise Linux 6 Server
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Red Hat Enterprise Linux 6 Server Optional
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Extra Packages for Enterprise Linux 6
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<para>
+				Consult Red Hat and Fedora documentation on how to add these channels to your system.
+			</para>
+		</section>
+		
+		<section>
+			<title>SELinux</title>
+			<para>
+				There is no support for SELinux yet. This will be added in a later release.
+			</para>
+		</section>
+		
+		<section>
+			<title>Firewall Ports</title>
+			<para>
+				BPView provides a webinterface and therefor the following ports needs to be opened in iptables.
+			</para>
+			<para>
+				<table frame="all" pgwide="1">
+					<title>Firewall Ports</title>
+					<tgroup colsep="1" cols="3">
+						<colspec colnum="1" colname="c0"/>
+						<colspec colnum="2" colname="c1"/>
+						<colspec colnum="3" colname="c2"/>
+						<thead>
+							<row>
+								<entry>Service</entry>
+								<entry>Port</entry>
+								<entry>Protocol</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>http</entry>
+								<entry>80</entry>
+								<entry>tcp</entry>
+							</row>
+							<row>
+								<entry>https</entry>
+								<entry>443</entry>
+								<entry>tcp</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</para>
+			<note>
+				<para>
+					Using BPView via a secure channel (https) isn't required, but highly recommended.
+					Consult Apache documentation on how to enable SSL for your webserver.
+				</para>
+			</note>
+			<para>
+				To open a port use the following command:
+			</para>
+			<para>
+				<command>iptables -A INPUT -p tcp --dport 80 -j ACCEPT</command>
+			</para>
+			
+		</section>
+				
+	</section>
+	
+	<section id="sect-BPView-Installation_Guide-BPView_Installation-Downloading_BPView">
+		<title>Downloading BPView</title>
+		<para>
+			Information on how to download BPView.
+		</para>
+		<note>
+			<para>
+				There is no yum repository available at the moment. This will follow in later version of BPView.
+			</para>
+		</note>
+		<para>
+			For downloading BPView visit Github pages located at <ulink url="https://github.com/BPView/BPView/releases/bpview-0.10">
+			https://github.com/BPView/BPView/releases/bpview-0.10</ulink>. 
+			Download the latest RPM using wget:
+		</para>
+		<para>
+			<command>
+				wget https://github.com/BPView/BPView/releases/download/bpview-0.10/bpview-0.10-1.el6.x86_64.rpm
+			</command>
+		</para>
+		<para>
+			After downloading the BPView package it can be installed as described in next section.
+		</para>
+	</section>
+	
+	<section id="sect-BPView-Installation_Guide-BPView_Installation-Installing_BPView">
+		<title>Installing BPView</title>
+		<para>
+			Information on how to install BPView.
+		</para>
+		<para>
+			BPView has some dependencies which require additional repositories. Please read chapter ... first.
+		</para>
+		<para>
+			The yum command will be used to install BPView and all it's dependencies:
+		</para>
+		<para>
+			<command>yum localinstall bpview-0.10-1.el6.x86_64.rpm</command>
+		</para>
+		<para>
+			Afterwards BPView is installed on your system and you can start configuring it.
+		</para>
+		
+	</section>
+	
 </chapter>
 

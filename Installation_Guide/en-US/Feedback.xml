@@ -9,11 +9,17 @@
 
 	</indexterm>
 	 <para>
-		If you find a typographical error in this manual, or if you have thought of a way to make this manual better, we would love to hear from you! Please submit a report on Github: https://github.com/BPView/documentation/issues.
-
+		If you find a typographical error in this manual, or if you have thought of a way to make this manual better, 
+		we would love to hear from you! Please submit a report on Github: 
+		<ulink url="https://github.com/BPView/documentation/issues">https://github.com/BPView/documentation/issues</ulink>.
+	</para>
+	<para>
 		When submitting a bug report, be sure to mention the manual's identifier: Installation_Guide
-
-		If you have a suggestion for improving the documentation, try to be as specific as possible when describing it. If you have found an error, please include the section number and some of the surrounding text so we can find it easily. 
+	</para>
+	<para>
+		If you have a suggestion for improving the documentation, try to be as specific as possible when describing it. 
+		If you have found an error, please include the section number and some of the surrounding text so we can find 
+		it easily. 
 	</para>
 </section>
 

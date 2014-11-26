@@ -6,28 +6,159 @@
 <chapter id="chap-BPView-Installation_Guide-Introduction">
 	<title>Introduction</title>
 	<para>
-		This is a test paragraph
+		BPView is a web based monitoring add-on which allows you to display and correlate business processes.
 	</para>
 	
-	<section id="sect-BPView-Installation_Guide-Test_Chapter-Test_Section_1">
-		<title>Test Section 1</title>
+	<section>
+		<title>Components</title>
 		<para>
-			This is a test paragraph in a section
-		</para>
-	</section>
-	
-	<section id="sect-BPView-Installation_Guide-Test_Chapter-Test_Section_2">
-		<title>Test Section 2</title>
-		<para>
-			This is a test paragraph in Section 2
-			<orderedlist>
+			BPView is a modular application which consists of multiple components which are:
+			<itemizedlist>
 				<listitem>
 					<para>
-						This is a test listitem.
+						BPView web interface
 					</para>
 				</listitem>
-			</orderedlist>
+				<listitem>
+					<para>
+						bpviewd
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						configuration files
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						memcached
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						cache files
+					</para>
+				</listitem>
+			</itemizedlist>
 		</para>
+		
+		<section>
+			<title>Interactions between BPView components</title>
+			<para>
+				The following figure shows how the different components act with each other:
+			</para>
+			<para>
+				<inlinemediaobject>
+					<imageobject>
+						<imagedata fileref="./images/BPView_overview.png" format="PNG" />
+					</imageobject>
+				</inlinemediaobject>
+			</para>
+			<para>
+				TODO: describe picture!
+			</para>
+		</section>
+	</section>
+		
+	<section>
+		<title>Supported Monitoring Backends</title>
+		<para>
+			BPView correlates host and service checks from monitoring systems. To do this BPView fetches monitoring
+			data from these systems. With this version of BPView the most common Open Source monitoring systems and
+			access methods for fetching data are supported.
+		</para>
+		<para>
+			You have to make sure that your monitoring system provide one of these access options. If not, please
+			consult the documentation of your monitoring solution to install this extension.
+		</para>
+			
+		<section>
+			<title>Monitoring systems</title>
+			<para>
+				Supported and tested monitoring solutions
+			</para>
+			<para>
+				<itemizedlist>
+					<listitem>
+						<para>
+							Icinga
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Nagios
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+			<para>
+				Untested but proberly working solutions
+			</para>
+			<para>
+				<itemizedlist>
+					<listitem>
+						<para>
+							Naemon
+						</para>
+					</listitem>
+					<listitem>
+						<para>
+							Shinken
+						</para>
+					</listitem>
+				</itemizedlist>
+			</para>
+		</section>
+			
+		<section>
+			<title>Access methods</title>
+			<para>You can access these monitoring solutions with one of the following methods:</para>
+			<para>
+				<table frame="all" pgwide="1">
+					<title>Access methods</title>
+					<tgroup colsep="1" cols="3">
+						<colspec colnum="1" colname="c0"/>
+						<colspec colnum="2" colname="c1"/>
+						<colspec colnum="3" colname="c2"/>
+						<thead>
+							<row>
+								<entry>Method</entry>
+								<entry>Port</entry>
+								<entry>Protocol</entry>
+							</row>
+						</thead>
+						<tbody>
+							<row>
+								<entry>IDOutils (MySQL)</entry>
+								<entry>3306</entry>
+								<entry>tcp</entry>
+							</row>
+							<row>
+								<entry>IDOutils (PostgreSQL)</entry>
+								<entry>5321</entry>
+								<entry>tcp</entry>
+							</row>
+							<row>
+								<entry>NDOutils (MySQL)</entry>
+								<entry>3306</entry>
+								<entry>tcp</entry>
+							</row>
+							<row>
+								<entry>mk-livestatus</entry>
+								<entry>5667</entry>
+								<entry>tcp</entry>
+							</row>
+							<row>
+								<entry>mk-livestatus</entry>
+								<entry></entry>
+								<entry>socket</entry>
+							</row>
+						</tbody>
+					</tgroup>
+				</table>
+			</para>
+		</section>
+			
 	</section>
 </chapter>
 

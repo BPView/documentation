@@ -6,7 +6,27 @@
 <chapter id="chap-BPView-Installation_Guide-Uninstalling_BPView">
 	<title>Uninstalling BPView</title>
 	<para>
-	
+		Information on how to uninstall BPView.
 	</para>
+	<warning>
+		<para>
+			When removing BPView the configuration files will be removed as well.
+		</para>
+		<para>
+			Make sure you have a working backup in case you want to reuse BPView later.
+		</para>
+	</warning>
+	<para>
+		You can remove BPView using yum command: 
+	</para>
+	<para>
+		<command>
+			yum remove bpview
+		</command>
+	</para>
+	<para>
+		Afterwards BPView is successfully uninstalled.
+	</para>
+	
 </chapter>
 
